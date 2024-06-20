@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+      .center-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        display: block;
+      }
+      .custom-size {
+        width: 710px;
+        height: 300px;
+        object-fit: cover;
+      }
+      .custom-text {
+        font-family: Arial, sans-serif;
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- As a heading -->
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container">
+        <span class="navbar-brand mb-0 h1">Promotions</span>
+      </div>
+    </nav>
+
+    <div class="container mt-3 center-content">
+      <div class="card mb-3" id="promo-1">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="https://www.color-hex.com/palettes/1038756.png" class="img-fluid rounded-start custom-size" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <p class="card-text custom-text">PROMOTION #1 This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text"><a href="#" data-bs-toggle="modal" data-bs-target="#infoModal" onclick="setModalContent(`Placeholder 1`)">*More information*</a></p>
+              <button class="btn btn-danger" onclick="moveToTop('promo-1')">CTA #1</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card mb-3" id="promo-2">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="https://www.color-hex.com/palettes/5541.png" class="img-fluid rounded-start custom-size" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <p class="card-text custom-text">PROMOTION #2 This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text"><a href="#" data-bs-toggle="modal" data-bs-target="#infoModal" onclick="setModalContent(`Placeholder 2`)">*More information*</a></p>
+              <button class="btn btn-danger" onclick="moveToTop('promo-2')">CTA #2</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-3" id="promo-3">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="https://www.color-hex.com/palettes/41210.png" class="img-fluid rounded-start custom-size" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <p class="card-text custom-text">PROMOTION #3 This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text"><a href="#" data-bs-toggle="modal" data-bs-target="#infoModal" onclick="setModalContent(`Placeholder 3`)">*More information*</a></p>
+              <button class="btn btn-danger" onclick="moveToTop('promo-3')">CTA #3</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="infoModalLabel">More Information</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="modal-content">
+              Placeholder text for more information. This can be updated with any content you want to display in the modal.
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+
+    <script>
+      const setModalContent = (content) => {
+        document.getElementById('modal-content').innerText = content;
+      }
+      const moveToTop = (promoId) => {
+        const promoElement = document.getElementById(promoId);
+        const parent = promoElement.parentNode;
+        parent.removeChild(promoElement);
+        parent.insertBefore(promoElement, parent.firstChild);
+      }
+  </script>
+
+  </body>
+</html>
